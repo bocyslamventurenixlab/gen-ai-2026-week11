@@ -12,7 +12,7 @@ const App = () => {
   const [uploadStatus, setUploadStatus] = useState('');
   const [error, setError] = useState('');
 
-  const API_BASE = "http://localhost:8000";
+  const API_BASE = '/api';
 
   useEffect(() => { 
     fetchDocs();
@@ -22,9 +22,20 @@ const App = () => {
   }, []);
 
   const fetchDocs = async () => {
-    const res = await fetch(`${API_BASE}/documents`);
-    const data = await res.json();
-    setDocuments(data);
+    try {
+      const res = await fetch(`${API_BASE}/documents`);
+      if (!res.ok) {
+        console.error('Failed to fetch documents:', res.status);
+        setDocuments([]);
+        return;
+      }
+      const data = await res.json();
+      // Ensure data is always an array
+      setDocuments(Array.isArray(data) ? data : []);
+    } catch (err) {
+      console.error('Error fetching documents:', err);
+      setDocuments([]);
+    }
   };
 
   const handleUpload = async (event) => {
