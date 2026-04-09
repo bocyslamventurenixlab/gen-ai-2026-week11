@@ -36,7 +36,7 @@ A powerful FastAPI + React application that uses multi-agent orchestration to an
 ```bash
 # Clone the repository
 git clone <repository-url>
-cd gen-ai-202511-week11
+cd gen-ai-2026-week11
 
 # Create .env file with your credentials
 cat > .env << EOF
@@ -141,7 +141,7 @@ CREATE TABLE security_logs (
 ## 📁 Project Structure
 
 ```
-gen-ai-202511-week11/
+gen-ai-2026-week11/
 ├── main.py                          # FastAPI backend
 ├── .env                            # Environment variables
 ├── README.md                       # This file
