@@ -21,7 +21,7 @@ upload_date TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 
 -- 4. Embeddings Table: Stores the actual text chunks and their vectors
--- Note: Dimensions are set to 4096 to match 'text-embedding-3-small'
+-- Note: Dimensions are set to 4096 to match 'qwen3-embedding-8b'
 CREATE TABLE IF NOT EXISTS embeddings (
 id SERIAL PRIMARY KEY,
 doc_id INTEGER REFERENCES documents(id) ON DELETE CASCADE,

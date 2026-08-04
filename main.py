@@ -49,8 +49,8 @@ class QueryRequest(BaseModel):
 
 def get_embedding(text: str) -> List[float]:
     """Calls the embedding model via OpenRouter/OpenAI."""
-    # Note: text-embedding-3-small is common, 
-    # but check OpenRouter for available embedding models like 'openai/text-embedding-3-small'
+    # Note: qwen/qwen3-embedding-8b is common, 
+    # but check OpenRouter for available embedding models like 'qwen/qwen3-embedding-8b'
     response = client.embeddings.create(
         input=[text.replace("\n", " ")],
         model="qwen/qwen3-embedding-8b"

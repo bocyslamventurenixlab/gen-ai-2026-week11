@@ -91,9 +91,8 @@ Create a `.env` file in the root directory:
 
 ```env
 # Supabase Configuration
-SUPABASE_URL=https://efxkytaeafilbmhtbudq.supabase.co
-SUPABASE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVmeGt5dGFlYWZpbGJtaHRidWRxIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc4NTgzMTIyMSwiZXhwIjoyMTAxNDA3MjIxfQ.hjAQJF_hAd2VonHzymkZ3Gu_-1EBnGO01H9IQ2k7KZc
-
+SUPABASE_URL="your_supabase_url"
+SUPABASE_KEY="your_supabase_key"
 # OpenRouter API (LLM Provider)
 OPENROUTER_API_KEY=sk-or-v1-xxxxxxxxxxxx
 OPENROUTER_URL=https://openrouter.ai/api/v1
