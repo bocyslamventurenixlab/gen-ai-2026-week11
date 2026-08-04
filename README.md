@@ -91,8 +91,8 @@ Create a `.env` file in the root directory:
 
 ```env
 # Supabase Configuration
-SUPABASE_URL=https://your-project.supabase.co
-SUPABASE_KEY=your_public_key
+SUPABASE_URL=https://efxkytaeafilbmhtbudq.supabase.co
+SUPABASE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVmeGt5dGFlYWZpbGJtaHRidWRxIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc4NTgzMTIyMSwiZXhwIjoyMTAxNDA3MjIxfQ.hjAQJF_hAd2VonHzymkZ3Gu_-1EBnGO01H9IQ2k7KZc
 
 # OpenRouter API (LLM Provider)
 OPENROUTER_API_KEY=sk-or-v1-xxxxxxxxxxxx
@@ -121,7 +121,7 @@ CREATE TABLE embeddings (
   id BIGSERIAL PRIMARY KEY,
   doc_id BIGINT REFERENCES documents(id),
   content TEXT NOT NULL,
-  embedding VECTOR(1536),
+  embedding VECTOR(4096),
   created_at TIMESTAMP DEFAULT NOW()
 );
 ```
@@ -359,7 +359,7 @@ User Query
 
 ### Vector Search Process
 
-1. **Embed Query**: Convert user question to 1536-dim vector
+1. **Embed Query**: Convert user question to 4096-dim vector
 2. **Fetch Embeddings**: Get all document chunk embeddings
 3. **Calculate Similarity**: Cosine similarity score for each chunk
 4. **Rank Results**: Sort by similarity (0.0 to 1.0)

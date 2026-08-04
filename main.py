@@ -53,7 +53,7 @@ def get_embedding(text: str) -> List[float]:
     # but check OpenRouter for available embedding models like 'openai/text-embedding-3-small'
     response = client.embeddings.create(
         input=[text.replace("\n", " ")],
-        model="openai/text-embedding-3-small" 
+        model="qwen/qwen3-embedding-8b"
     )
     return response.data[0].embedding
 
@@ -87,7 +87,7 @@ class SecurityAgent:
                 f"{query}"
             )
             response = client.chat.completions.create(
-                model="arcee-ai/trinity-large-preview:free",
+                model="nvidia/nemotron-3-ultra-550b-a55b:free",
                 messages=[{"role": "user", "content": prompt}]
             )
             return "YES" not in response.choices[0].message.content.upper()
@@ -194,7 +194,7 @@ class AnalystAgent:
         try:
             print(f"[Analyst] Sending to LLM with prompt length: {len(system_prompt)}")
             response = client.chat.completions.create(
-                model="arcee-ai/trinity-large-preview:free",
+                model="nvidia/nemotron-3-ultra-550b-a55b:free",
                 messages=[
                     {"role": "system", "content": system_prompt}, 
                     {"role": "user", "content": query}
